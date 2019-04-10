@@ -1,0 +1,93 @@
+@import '~@/styles/variable.less';
+
+@buttonHoverColor: #4da6ff;
+
+@disabledFont: #999;
+@disabledBackground: #f2f2f2;
+@disabledBorder: #d8d8d8;
+
+.button {
+    border-radius: 30px;
+    line-height: 32px;
+
+    &.primary {
+        background: @themeBlue;
+        border: none;
+        color: #fff;
+        transition: all 0.3s;
+
+        &:disabled {
+            background: @disabledBackground;
+            color: @disabledFont;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        &:hover {
+            opacity: 0.8;
+            transition: all 0.3s;
+        }
+    }
+
+    &.default {
+        background: #fff;
+        border-color: @themeBlue;
+        color: @themeBlue;
+        transition: all 0.3s;
+
+        &:disabled {
+            border-color: @disabledBorder;
+            color: @disabledFont;
+
+            &:hover {
+                background: #fff;
+                opacity: 1;
+            }
+        }
+
+        &:hover {
+            opacity: 0.8;
+            transition: all 0.3s;
+        }
+    }
+
+    &.whiteLine {
+        background: transparent;
+        border-color: #fff;
+        color: #fff;
+        transition: all 0.3s;
+
+        &:hover {
+            border-color: @themeGary;
+            color: @themeGary;
+            transition: all 0.3s;
+        }
+    }
+
+    &.blueLine {
+        background: transparent;
+        border-color: @themeBlue;
+        color: @themeBlue;
+        transition: all 0.3s;
+
+        &:hover {
+            border-color: @buttonHoverColor;
+            color: @buttonHoverColor;
+            transition: all 0.3s;
+        }
+    }
+
+    &.gary {
+        background: @themeGary;
+        border-color: @themeGary;
+        color: #fff;
+        transition: all 0.3s;
+
+        &:hover {
+            opacity: 0.8;
+            transition: all 0.3s;
+        }
+    }
+}
