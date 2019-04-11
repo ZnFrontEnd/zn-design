@@ -11,7 +11,7 @@ module.exports = {
     },
     output: {
         filename: '[name].js',
-        path: PATHS.dist,
+        path: PATHS.lib,
     },
     optimization: {
         runtimeChunk: 'single',
@@ -32,10 +32,7 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                use: [
-                    'babel-loader?cacheDirectory',
-                    'react-hot-loader/webpack',
-                ],
+                use: 'babel-loader?cacheDirectory',
             },
             {
                 test: /\.less$/,

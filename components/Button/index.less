@@ -1,4 +1,4 @@
-@import '~@/styles/variable.less';
+@import '~Components/styles/index.less';
 
 @buttonHoverColor: #4da6ff;
 
@@ -25,7 +25,15 @@
             }
         }
 
+        &:active,
+        &:focus {
+            background: @themeBlue;
+            color: #fff;
+        }
+
         &:hover {
+            background: @themeBlue;
+            color: #fff;
             opacity: 0.8;
             transition: all 0.3s;
         }
@@ -40,6 +48,7 @@
         &:disabled {
             border-color: @disabledBorder;
             color: @disabledFont;
+            background: #fff;
 
             &:hover {
                 background: #fff;
@@ -49,6 +58,8 @@
 
         &:hover {
             opacity: 0.8;
+            border-color: @themeBlue;
+            color: @themeBlue;
             transition: all 0.3s;
         }
     }

@@ -44,23 +44,47 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                     'babel-loader?cacheDirectory',
-                    'react-hot-loader/webpack',
+                    // 'react-hot-loader/webpack',
+                ],
+            },
+            {
+                test: /\.less$/,
+                include: /node_modules/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                        },
+                    },
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            javascriptEnabled: true,
+                        },
+                    },
                 ],
             },
             {
                 test: /\.less$/,
                 exclude: /node_modules/,
                 use: [
-                    'style-loader', // loader需要按顺序
+                    'style-loader',
                     {
                         loader: 'css-loader',
                         options: {
-                            modules: true, // css模块加载
+                            modules: true,
                             localIdentName: '[name]-[local]-[hash:base64:5]', // class的命名，文件名+类名+哈希
                             importLoaders: 1,
                         },
                     },
-                    'less-loader',
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            javascriptEnabled: true,
+                        },
+                    },
                 ],
             },
         ],
@@ -69,14 +93,14 @@ module.exports = {
         extensions: ['.js', '.jsx'],
         alias: {
             '@': PATHS.example,
-            'components': PATHS.components,
+            'Components': PATHS.components,
         },
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             title: 'Zn-design Example Devalopment',
-            template: './template/index.html',
+            template: path.join(PATHS.build, 'template/index.html'),
             hash: true,
         }),
     ],

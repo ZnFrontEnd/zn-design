@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Checkbox } from 'antd'
 import PropTypes from 'prop-types'
-import Button from 'components/Button'
+import Button from 'Components/Button'
 
 import styles from './index.less'
 
