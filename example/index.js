@@ -1,9 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import "antd/dist/antd.less"
 
 import IndexApp from './pages'
-
-import "antd/dist/antd.less"
 
 ReactDOM.render(
     <IndexApp />,

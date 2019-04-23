@@ -1,104 +1,133 @@
 @import '~Components/styles/index.less';
 
-@buttonHoverColor: #4da6ff;
+@buttonDanger: #f5202d;
+@buttonWarn: #faad15;
+@buttonPending: #52c41a;
 
 @disabledFont: #999;
 @disabledBackground: #f2f2f2;
 @disabledBorder: #d8d8d8;
 
 .button {
+    box-sizing: border-box;
+    color: #fff;
+    border-color: transparent;
     border-radius: 30px;
-    line-height: 32px;
+    transition: all 0.3s;
+
+    &:hover {
+        color: #fff;
+        border-color: transparent;
+        opacity: 0.8;
+        transition: all 0.3s;
+    }
 
     &.primary {
         background: @themeBlue;
-        border: none;
-        color: #fff;
-        transition: all 0.3s;
+
+        &:focus {
+            color: #fff;
+            background: @themeBlue;
+            border-color: transparent;
+            opacity: 0.8;
+        }
 
         &:disabled {
-            background: @disabledBackground;
             color: @disabledFont;
+            background: @disabledBackground;
+            border-color: transparent;
 
             &:hover {
                 opacity: 1;
             }
         }
+    }
 
-        &:active,
+    &.danger {
+        background: @buttonDanger;
+
         &:focus {
-            background: @themeBlue;
             color: #fff;
+            background: @buttonDanger;
+            border-color: transparent;
+            opacity: 0.8;
         }
 
-        &:hover {
-            background: @themeBlue;
+        &:disabled {
+            color: @disabledFont;
+            background: @disabledBackground;
+            border-color: transparent;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    &.warn {
+        background: @buttonWarn;
+
+        &:focus {
             color: #fff;
+            background: @buttonWarn;
+            border-color: transparent;
             opacity: 0.8;
-            transition: all 0.3s;
+        }
+
+        &:disabled {
+            color: @disabledFont;
+            background: @disabledBackground;
+            border-color: transparent;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    &.pending {
+        background: @buttonPending;
+
+        &:focus {
+            color: #fff;
+            background: @buttonPending;
+            border-color: transparent;
+            opacity: 0.8;
+        }
+
+        &:disabled {
+            color: @disabledFont;
+            background: @disabledBackground;
+            border-color: transparent;
+
+            &:hover {
+                opacity: 1;
+            }
         }
     }
 
     &.default {
+        color: @themeBlue;
         background: #fff;
         border-color: @themeBlue;
-        color: @themeBlue;
-        transition: all 0.3s;
 
         &:disabled {
-            border-color: @disabledBorder;
             color: @disabledFont;
-            background: #fff;
+            border-color: @disabledBorder;
 
             &:hover {
                 background: #fff;
                 opacity: 1;
             }
         }
-
-        &:hover {
-            opacity: 0.8;
-            border-color: @themeBlue;
-            color: @themeBlue;
-            transition: all 0.3s;
-        }
     }
 
-    &.whiteLine {
-        background: transparent;
-        border-color: #fff;
-        color: #fff;
-        transition: all 0.3s;
-
-        &:hover {
-            border-color: @themeGary;
-            color: @themeGary;
-            transition: all 0.3s;
-        }
+}
+:global {
+    .ant-btn-lg {
+        font-size: 14px;
     }
-
-    &.blueLine {
-        background: transparent;
-        border-color: @themeBlue;
-        color: @themeBlue;
-        transition: all 0.3s;
-
-        &:hover {
-            border-color: @buttonHoverColor;
-            color: @buttonHoverColor;
-            transition: all 0.3s;
-        }
-    }
-
-    &.gary {
-        background: @themeGary;
-        border-color: @themeGary;
-        color: #fff;
-        transition: all 0.3s;
-
-        &:hover {
-            opacity: 0.8;
-            transition: all 0.3s;
-        }
+    .ant-btn-sm {
+        font-size: 12px;
     }
 }

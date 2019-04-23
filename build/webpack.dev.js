@@ -1,5 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");//提取css到单独文件的插件
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');//压缩css插件
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const { PATHS } = require('./config')
@@ -51,7 +53,7 @@ module.exports = {
                 test: /\.less$/,
                 include: /node_modules/,
                 use: [
-                    'style-loader',
+                    'style-loader', // TODO:prod MiniCssExtractPlugin.loader
                     {
                         loader: 'css-loader',
                         options: {
@@ -70,7 +72,7 @@ module.exports = {
                 test: /\.less$/,
                 exclude: /node_modules/,
                 use: [
-                    'style-loader',
+                    'style-loader', // TODO:prod MiniCssExtractPlugin.loader
                     {
                         loader: 'css-loader',
                         options: {
@@ -103,5 +105,10 @@ module.exports = {
             template: path.join(PATHS.build, 'template/index.html'),
             hash: true,
         }),
+        new MiniCssExtractPlugin({
+            filename: 'css/[name].css', // TODO:prod filename: 'css/[name].[hash].css',
+            chunkFilename: '[id].css' // TODO:prod filename: '[id].[hash].css',
+        }),
+        new OptimizeCssAssetsPlugin()
     ],
 }

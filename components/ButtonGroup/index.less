@@ -1,59 +1,75 @@
 @import '~Components/styles/index.less';
 
+@largeSizeMargin: 30px;
+@largeSizeHeight: 40px;
+
+@defaultSizeMargin: 20px;
+@defaultSizeHeight: 32px;
+
+@smallSizeMargin: 12px;
+@smallSizeHeight: 24px;
+
 .container {
     display: flex;
 
     &.left {
         flex-wrap: wrap;
-
-        .groupButton {
-            margin-right: 30px;
-        }
-
-        .contractWrap {
-            margin-right: 30px;
-        }
     }
 
     &.center {
         flex-wrap: wrap;
         justify-content: center;
-
-        .groupButton {
-            margin-right: 30px;
-        }
-
-        .contractWrap {
-            margin-right: 30px;
-        }
     }
 
     &.right {
         flex-direction: row-reverse;
         flex-wrap: wrap-reverse;
+    }
 
+    &.large {
         .groupButton {
-            margin-left: 30px;
+            margin-left: @largeSizeMargin;
         }
 
         .contractWrap {
-            margin-left: 30px;
+            height: @largeSizeHeight;
+            margin-left: @largeSizeMargin;
+            line-height: @largeSizeHeight;
+        }
+    }
+
+    &.default {
+        .groupButton {
+            margin-left: @defaultSizeMargin;
+        }
+
+        .contractWrap {
+            height: @defaultSizeHeight;
+            margin-left: @defaultSizeMargin;
+            line-height: @defaultSizeHeight;
+        }
+    }
+
+    &.small {
+        .groupButton {
+            margin-left: @smallSizeMargin;
+        }
+
+        .contractWrap {
+            height: @smallSizeHeight;
+            margin-left: @smallSizeMargin;
+            line-height: @smallSizeHeight;
         }
     }
 
     // 按钮
     .groupButton {
-        width: 180px;
-        height: 40px;
         display: block;
-        line-height: 40px;
         margin-bottom: 10px;
     }
 
     // 合同
     .contractWrap {
-        height: 40px;
-        line-height: 40px;
         margin-bottom: 10px;
 
         :global {
@@ -66,10 +82,10 @@
             position: relative;
             top: 3px;
             display: inline-block;
-            height: 18px;
             width: 1px;
-            background: #666;
+            height: 18px;
             margin: 0 10px;
+            background: #666;
         }
 
         .contractLink {

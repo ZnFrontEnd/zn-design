@@ -140,6 +140,114 @@ class ButtonGroupPage extends Component {
                         },
                     ]}
                 />
+                <hr />
+                <h3>全局定义大小 - 默认'large'; 全局定义宽度 - 默认'180px', flase则'auto'</h3>
+                <ButtonGroup
+                    globalWidth={false}
+                    primary={[
+                        {
+                            text: '确认1',
+                            onClick: () => { console.log('确认1') },
+                        },
+                        {
+                            text: '确认2',
+                            onClick: () => { console.log('确认2') },
+                        },
+                    ]}
+                    secondary={[
+                        {
+                            text: '返回1',
+                            onClick: () => { console.log('返回1') },
+                        },
+                        {
+                            text: '返回2',
+                            onClick: () => { console.log('返回2') },
+                        },
+                    ]}
+                />
+                <ButtonGroup
+                    globalWidth={false}
+                    globalSize="default"
+                    primary={[
+                        {
+                            text: '确认1',
+                            onClick: () => { console.log('确认1') },
+                        },
+                        {
+                            text: '确认2',
+                            onClick: () => { console.log('确认2') },
+                        },
+                    ]}
+                    secondary={[
+                        {
+                            text: '返回1',
+                            onClick: () => { console.log('返回1') },
+                        },
+                        {
+                            text: '返回2',
+                            onClick: () => { console.log('返回2') },
+                        },
+                    ]}
+                />
+                <ButtonGroup
+                    globalWidth={false}
+                    globalSize="small"
+                    primary={[
+                        {
+                            text: '确认1',
+                            onClick: () => { console.log('确认1') },
+                        },
+                        {
+                            text: '确认2',
+                            onClick: () => { console.log('确认2') },
+                        },
+                    ]}
+                    secondary={[
+                        {
+                            text: '返回1',
+                            onClick: () => { console.log('返回1') },
+                        },
+                        {
+                            text: '返回2',
+                            onClick: () => { console.log('返回2') },
+                        },
+                    ]}
+                />
+                <hr />
+                <h3>自定义属性 buttons，自定义 type, width, size</h3>
+                <ButtonGroup
+                    globalWidth={false}
+                    globalSize="default"
+                    buttons={[
+                        {
+                            text: 'primary',
+                            onClick: () => { console.log('primary') },
+                        },
+                        {
+                            text: 'danger small',
+                            onClick: () => { console.log('danger small') },
+                            type: 'danger',
+                            size: 'small',
+                        },
+                        {
+                            text: 'pending 180px',
+                            onClick: () => { console.log('pending 180px') },
+                            type: 'pending',
+                            width: '180px'
+                        },
+                        {
+                            text: 'warn large',
+                            onClick: () => { console.log('warn large') },
+                            type: 'warn',
+                            size: 'large',
+                        },
+                        {
+                            text: 'primary disabled',
+                            onClick: () => { console.log('primary disabled') },
+                            disabled: true
+                        },
+                    ]}
+                />
             </ContentLayout>
         )
     }
