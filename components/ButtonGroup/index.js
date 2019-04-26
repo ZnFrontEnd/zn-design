@@ -4,7 +4,9 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import Button from 'Components/Button'
 
-import styles from './index.less'
+import './style/index'
+
+const prefix = 'zn-buttongroup'
 
 class ButtonGroup extends Component {
     generateCustomButton = ({ text, hide, ...params }, index) => {
@@ -16,7 +18,7 @@ class ButtonGroup extends Component {
         return (
             <Button
                 key={index}
-                className={styles.groupButton}
+                // className={styles.groupButton}
                 width={globalWidth || 'auto'}
                 size={globalSize}
                 {...params}
@@ -35,7 +37,7 @@ class ButtonGroup extends Component {
         return (
             <Button
                 key={index}
-                className={styles.groupButton}
+                // className={styles.groupButton}
                 width={globalWidth || 'auto'}
                 size={globalSize}
                 {...params}
@@ -54,7 +56,7 @@ class ButtonGroup extends Component {
         return (
             <Button
                 key={index}
-                className={styles.groupButton}
+                // className={styles.groupButton}
                 width={globalWidth || 'auto'}
                 size={globalSize}
                 type="default"
@@ -70,7 +72,7 @@ class ButtonGroup extends Component {
             return null
         }
         return (
-            <div className={styles.contractWrap} key={index}>
+            <div className={`${prefix}-contract`} key={index}>
                 {checkbox && (
                     <Checkbox checked={checkbox.checked} onChange={checkbox.onChange}>
                         同意
@@ -78,7 +80,7 @@ class ButtonGroup extends Component {
                 )}
                 <a
                     href={link}
-                    className={styles.contractLink}
+                    className={`${prefix}-contract-link`}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -86,7 +88,7 @@ class ButtonGroup extends Component {
                 </a>
                 {download && (
                     <Fragment>
-                        <span className={styles.divide} />
+                        <span className={`${prefix}-contract-divide`} />
                         <a href={download} target="_blank" rel="noopener noreferrer">
                             下载
                         </a>
@@ -100,7 +102,7 @@ class ButtonGroup extends Component {
         const { align, globalSize, buttons, primary, secondary, contract } = this.props
 
         return (
-            <div className={classNames(styles.container, styles[align], styles[globalSize])}>
+            <div className={classNames(prefix, `${prefix}-align-${align}`, `${prefix}-size-${globalSize}`)}>
                 {buttons.map(this.generateCustomButton)}
                 {primary.map(this.generatePrimaryButton)}
                 {secondary.map(this.generateSecondaryButton)}

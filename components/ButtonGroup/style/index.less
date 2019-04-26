@@ -1,4 +1,6 @@
-@import '~Components/styles/index.less';
+@import '../../styles/index.less';
+
+@buttonGroup-prefix-cls: ~'@{perfix}-buttongroup';
 
 @largeSizeMargin: 30px;
 @largeSizeHeight: 40px;
@@ -9,53 +11,53 @@
 @smallSizeMargin: 12px;
 @smallSizeHeight: 24px;
 
-.container {
+.@{buttonGroup-prefix-cls} {
     display: flex;
 
-    &.left {
+    &&-align-left {
         flex-wrap: wrap;
     }
 
-    &.center {
+    &&-align-center {
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    &.right {
+    &&-align-right {
         flex-direction: row-reverse;
         flex-wrap: wrap-reverse;
     }
 
-    &.large {
-        .groupButton {
+    &&-size-large {
+        .zn-button {
             margin-left: @largeSizeMargin;
         }
 
-        .contractWrap {
+        .contract-wrap {
             height: @largeSizeHeight;
             margin-left: @largeSizeMargin;
             line-height: @largeSizeHeight;
         }
     }
 
-    &.default {
-        .groupButton {
+    &&-size-default {
+        .zn-button {
             margin-left: @defaultSizeMargin;
         }
 
-        .contractWrap {
+        .contract-wrap {
             height: @defaultSizeHeight;
             margin-left: @defaultSizeMargin;
             line-height: @defaultSizeHeight;
         }
     }
 
-    &.small {
-        .groupButton {
+    &&-size-small {
+        .zn-button {
             margin-left: @smallSizeMargin;
         }
 
-        .contractWrap {
+        .contract-wrap {
             height: @smallSizeHeight;
             margin-left: @smallSizeMargin;
             line-height: @smallSizeHeight;
@@ -63,13 +65,13 @@
     }
 
     // 按钮
-    .groupButton {
-        display: block;
+    .zn-button {
+        // display: block;
         margin-bottom: 10px;
     }
 
     // 合同
-    .contractWrap {
+    &-contract {
         margin-bottom: 10px;
 
         :global {
@@ -78,7 +80,7 @@
             }
         }
 
-        .divide {
+        &-divide {
             position: relative;
             top: 3px;
             display: inline-block;
@@ -88,7 +90,7 @@
             background: #666;
         }
 
-        .contractLink {
+        &-link {
             text-decoration: underline;
         }
     }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { Button } from 'antd'
 
-import './index.less'
+import './style/index'
 
 const prefix = 'zn-button'
 
