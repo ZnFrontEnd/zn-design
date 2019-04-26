@@ -3,11 +3,13 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { Button } from 'antd'
 
-import styles from './index.less'
+import './index.less'
+
+const prefix = 'zn-button'
 
 const CustomButton = ({ type, width, style, className, disable, ...otherProps }) => (
     <Button
-        className={classNames(styles.button, styles[type], className)}
+        className={classNames(prefix, `${prefix}-${type}`, className)}
         style={{
             width,
             ...style,

@@ -1,5 +1,7 @@
 @import '~Components/styles/index.less';
 
+@button-prefix-cls: ~'@{perfix}-button';
+
 @buttonDanger: #f5202d;
 @buttonWarn: #faad15;
 @buttonPending: #52c41a;
@@ -8,7 +10,15 @@
 @disabledBackground: #f2f2f2;
 @disabledBorder: #d8d8d8;
 
-.button {
+
+// button.@{button-prefix-cls} {
+//     box-sizing: border-box;
+//     color: #fff;
+//     border-color: transparent;
+//     border-radius: 30px;
+//     transition: all 0.3s;
+// }
+.@{button-prefix-cls} {
     box-sizing: border-box;
     color: #fff;
     border-color: transparent;
@@ -22,7 +32,7 @@
         transition: all 0.3s;
     }
 
-    &.primary {
+    &&-primary {
         background: @themeBlue;
 
         &:focus {
@@ -43,7 +53,7 @@
         }
     }
 
-    &.danger {
+    &&-danger {
         background: @buttonDanger;
 
         &:focus {
@@ -64,7 +74,7 @@
         }
     }
 
-    &.warn {
+    &&-warn {
         background: @buttonWarn;
 
         &:focus {
@@ -85,7 +95,7 @@
         }
     }
 
-    &.pending {
+    &&-pending {
         background: @buttonPending;
 
         &:focus {
@@ -106,7 +116,7 @@
         }
     }
 
-    &.default {
+    &&-default {
         color: @themeBlue;
         background: #fff;
         border-color: @themeBlue;

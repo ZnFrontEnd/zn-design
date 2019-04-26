@@ -5,13 +5,14 @@ import {
     Switch,
     NavLink,
 } from 'react-router-dom'
+import { hot } from 'react-hot-loader/root'
 
 import Button from './Button'
 import ButtonGroup from './ButtonGroup'
 import SearchForm from './SearchForm'
 import BasicTable from './BasicTable'
 
-import styles from './index.less'
+import './index.less'
 
 const menus = [
     {
@@ -42,7 +43,7 @@ class IndexApp extends Component {
     render () {
         return (
             <Router>
-                <ul className={styles.menu}>
+                <ul className="example-menu">
                     {
                         menus.map(menu => (
                             <li
@@ -50,8 +51,8 @@ class IndexApp extends Component {
                             >
                                 <NavLink
                                     to={menu.key}
-                                    className={styles.menuItem}
-                                    activeClassName={styles.menuActive}
+                                    className="example-menu-item"
+                                    activeClassName="example-menu-item-active"
                                 >
                                     { menu.name }
                                 </NavLink>
@@ -72,4 +73,4 @@ class IndexApp extends Component {
 
 }
 
-export default IndexApp
+export default hot(() => <IndexApp />)

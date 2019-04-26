@@ -44,8 +44,9 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            // modules: true,
-                            // importLoaders: 1,
+                            modules: true,
+                            localIdentName: '[name]-[local]-[hash:base64:5]', // class的命名，文件名+类名+哈希
+                            importLoaders: 1,
                         },
                     },
                     {
@@ -64,8 +65,8 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            // modules: true,
-                            // importLoaders: 1,
+                            modules: true,
+                            importLoaders: 1,
                         },
                     },
                     {
@@ -90,22 +91,6 @@ module.exports = {
             filename: 'css/[name].[hash].css',
             // chunkFilename: '[id].[hash].css'
         }),
-        new OptimizeCssAssetsPlugin(),
-        new WebpackBar({
-            name: '🚚  Zn Design',
-            color: '#2f54eb',
-        }),
-        new webpack.HotModuleReplacementPlugin(),
-        new HtmlWebpackPlugin({
-            title: 'Zn-design Example Devalopment',
-            template: path.join(PATHS.build, 'template/index.html'),
-            hash: true,
-        }),
-        new webpack.optimize.ModuleConcatenationPlugin(),
-        new MiniCssExtractPlugin({
-            filename: 'css/[name].css',
-            // chunkFilename: '[id].css'
-        }),
-        // new OptimizeCssAssetsPlugin()
+        new OptimizeCssAssetsPlugin()
     ],
 }

@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from './index.less';
+import './index.less';
 
 const ContentLayout = ({ children }) => (
-    <div className={styles.container}>
+    <div className="example-layout-container">
         { children }
     </div>
 )
