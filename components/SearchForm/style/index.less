@@ -1,8 +1,12 @@
-.container {
+@import '../../styles/index.less';
+
+@button-prefix-cls: ~'@{perfix}-searchform';
+
+.@{button-prefix-cls} {
     // background: #fff;
     margin-bottom: 30px;
 
-    > :global(button.ant-btn) {
+    > .zn-button {
         position: relative;
         top: 4px;
         margin-right: 20px;

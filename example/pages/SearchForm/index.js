@@ -40,8 +40,14 @@ class SearchFormPage extends Component {
                             dateFormat: 'YYYY-MM-DD',
                         },
                     ]}
-                    onSearch={this.handleSearchForm}
-                    onDownload={this.handleDownload}
+                    buttonGroup={[
+                        {
+                            onSearch: vals => { console.log(vals) },
+                        },
+                        {
+                            onDownload: vals => { console.log(vals) },
+                        },
+                    ]}
                 />
             </ContentLayout>
         )

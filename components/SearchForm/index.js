@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
-import { Form, Input, Select, DatePicker, Button } from 'antd'
-import styles from './index.less'
+import { Form, Input, Select, DatePicker } from 'antd'
+import Button from '../Button'
+
+import './style/index'
 
 const { RangePicker } = DatePicker
+
+const prefix = 'zn-searchform'
 
 @Form.create()
 class SearchForm extends Component {
@@ -161,7 +165,7 @@ class SearchForm extends Component {
         const { data, buttonGroup } = this.props
 
         return (
-            <Form className={styles.container} layout="inline">
+            <Form className={prefix} layout="inline">
                 {this.createForm(data)}
                 {buttonGroup.map((button, index) => {
                     if (button.onSearch) {
