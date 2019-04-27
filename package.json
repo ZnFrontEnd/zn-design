@@ -22,7 +22,8 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.js",
-    "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js",
+    "dist": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js",
+    "compile": "node build/gulpfile.js",
     "prepublish": "npm run build"
   },
   "peerDependencies": {
@@ -43,6 +44,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "antd": "*",
+    "autoprefixer": "^9.5.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "babel-plugin-import": "^1.11.0",
@@ -65,6 +67,7 @@
     "mini-css-extract-plugin": "^0.6.0",
     "moment": "^2.24.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss": "^7.0.14",
     "prettier": "^1.16.4",
     "prop-types": "^15.6.2",
     "react": "*",

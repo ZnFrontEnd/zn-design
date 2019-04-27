@@ -29,7 +29,7 @@ module.exports = webpackMerge({}, config, {
         library: pkg.name,
         libraryTarget: 'umd',
         filename: '[name].js',
-        path: PATHS.lib,
+        path: PATHS.dist,
     },
     externals: {
         react: {

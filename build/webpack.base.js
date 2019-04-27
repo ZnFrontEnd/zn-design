@@ -17,20 +17,20 @@ const PATHS = {
 babelConfig.plugins.push([
     resolve('babel-plugin-import'),
     {
-        style: true,
-        libraryName: pkg.name,
-        libraryDirectory: 'components',
-    },
-])
-babelConfig.plugins.push([
-    resolve('babel-plugin-import'),
-    {
-        style: true,
         libraryName: 'antd',
         libraryDirectory: 'es',
+        style: true,
     },
-    'other-package-babel-plugin-import',
 ])
+// babelConfig.plugins.push([
+//     resolve('babel-plugin-import'),
+//     {
+//         style: true,
+//         libraryName: 'antd',
+//         libraryDirectory: 'es',
+//     },
+//     'other-package-babel-plugin-import',
+// ])
 const config = {
     devtool: 'source-map',
     module: {
