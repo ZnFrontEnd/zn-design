@@ -30,7 +30,7 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.js",
     "dist": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js",
     "compile": "znd-tools run compile",
-    "prepublish": "npm run build"
+    "prepublish": "npm run dist && npm run compile"
   },
   "peerDependencies": {
     "react": "*",
