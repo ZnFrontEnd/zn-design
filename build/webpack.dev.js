@@ -2,9 +2,8 @@ const path = require('path')
 const webpack = require('webpack')
 const webpackMerge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
-const { PATHS, config } = require('./webpack.base')
+const { PATHS, config, pkg } = require('./webpack.base')
 
 module.exports = webpackMerge({}, config, {
     mode: 'development',
@@ -36,11 +35,7 @@ module.exports = webpackMerge({}, config, {
         },
     },
     entry: {
-        app: [
-            'react-hot-loader/patch',
-            'webpack/hot/only-dev-server',
-            path.join(PATHS.example, 'index'),
-        ],
+        [pkg.name]: path.join(PATHS.example, 'index'),
     },
     output: {
         filename: '[name].js',

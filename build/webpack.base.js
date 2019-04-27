@@ -1,8 +1,6 @@
 const path = require('path')
 const WebpackBar = require('webpackbar')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin") // 提取css到单独文件的插件
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin') // 压缩css插件
 const { getProjectPath, resolve } = require('./utils')
 
 const pkg = require(getProjectPath('package.json'))
@@ -33,44 +31,8 @@ babelConfig.plugins.push([
     },
     'other-package-babel-plugin-import',
 ])
-
 const config = {
-    output: {
-        library: pkg.name,
-        libraryTarget: 'umd',
-    },
     devtool: 'source-map',
-    optimization: {
-        // runtimeChunk: 'single',
-        minimizer: [
-            new OptimizeCssAssetsPlugin({}),
-            // new UglifyJsPlugin({
-            //     cache: true,
-            //     parallel: true,
-            //     sourceMap: true,
-            //     uglifyOptions: {
-            //       warnings: false,
-            //     },
-            // }),
-        ],
-        splitChunks: {
-            // cacheGroups: {
-            //     // 将第三方模块提取出来
-            //     vendors: {
-            //         test: /node_modules/,
-            //         name: 'vendors',
-            //         enforce: true,
-            //         chunks: 'initial',
-            //     },
-            //     styles: {
-            //         name: 'styles',
-            //         test: /\.less$/,
-            //         chunks: 'all',
-            //         enforce: true,
-            //     },
-            // },
-        },
-    },
     module: {
         rules: [
             {
@@ -116,26 +78,6 @@ const config = {
             },
         ],
     },
-    // externals: {
-    //     react: {
-    //         root: 'React',
-    //         commonjs2: 'react',
-    //         commonjs: 'react',
-    //         amd: 'react',
-    //     },
-    //     'react-dom': {
-    //         root: 'ReactDOM',
-    //         commonjs2: 'react-dom',
-    //         commonjs: 'react-dom',
-    //         amd: 'react-dom',
-    //     },
-    //     'antd': {
-    //         root: 'antd',
-    //         commonjs2: 'antd',
-    //         commonjs: 'antd',
-    //         amd: 'antd',
-    //     },
-    // },
     resolve: {
         extensions: ['.js', '.jsx'],
         alias: {
@@ -150,12 +92,16 @@ const config = {
             color: '#2f54eb',
         }),
         new MiniCssExtractPlugin({
-            filename: 'css/[name].css',
+            filename: '[name].css',
         }),
     ],
+    performance: {
+        hints: false,
+    },
 }
 
 module.exports = {
     PATHS,
+    pkg,
     config,
 }
