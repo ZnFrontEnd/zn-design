@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Checkbox } from 'antd'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import Button from 'Components/Button'
+import Button from '../Button'
 
 import './style/index'
 

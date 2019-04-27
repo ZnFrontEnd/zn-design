@@ -14,11 +14,13 @@ class BasicTablePage extends Component {
                 <BasicTable
                     columns={[
                         {
+                            dataIndex: 'date',
                             type: 'date', // 自动将日期转换
                             title: '日期',
                             format: 'YYYY-MM-DD hh:mm:ss', // 默认
                         },
                         {
+                            dataIndex: 'amount',
                             type: 'amount', // 自动加千分符，（暂无，可先加上）
                             title: '金额',
                         },
@@ -35,7 +37,12 @@ class BasicTablePage extends Component {
                             ]
                          }
                     ]}
-                    dataSource={[]}
+                    dataSource={[
+                        { date: '2019-12-30', amount: '1000' },
+                        { date: '2019-12-30', amount: '1000' },
+                        { date: '2019-12-30', amount: '1000' },
+                        { date: '2019-12-30', amount: '1000' },
+                    ]}
                 />
             </ContentLayout>
         )

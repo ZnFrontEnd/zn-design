@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
-import { Table, Button } from 'antd'
+import { Table } from 'antd'
+import Button from '../Button'
 import moment from 'moment'
 
 class BasicTable extends Component {
@@ -27,6 +28,7 @@ class BasicTable extends Component {
                                     <Button
                                         size="small"
                                         key={text}
+                                        type="default"
                                         onClick={() => onClick(record)}
                                         style={{
                                             marginRight: 10,
